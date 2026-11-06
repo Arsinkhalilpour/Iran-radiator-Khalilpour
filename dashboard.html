@@ -4,45 +4,70 @@
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#101d35">
 <title>داشبورد مدیریت | ایران رادیاتور خلیل‌پور</title>
 <style>
-:root{--navy:#101d35;--blue:#1b3a65;--red:#df4b4b;--bg:#f4f6fa;--ink:#172235;--muted:#687386;--line:#e5eaf1;--white:#fff}
-*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font-family:Tahoma,Arial,sans-serif;line-height:1.8}.top{background:var(--navy);color:#fff;padding:18px 4%}.top b{font-size:1.1rem}.top a{color:#ffd0d0;float:left}.layout{width:min(1100px,94%);margin:28px auto}.warning{background:#fff5db;border:1px solid #f0d58d;color:#76520b;padding:13px 16px;border-radius:12px;margin-bottom:20px;font-size:.9rem}.head{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}.head h1{margin:0;color:var(--navy)}.muted{color:var(--muted);font-size:.9rem}.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;margin-top:20px}.panel{background:#fff;border:1px solid var(--line);border-radius:16px;padding:22px;box-shadow:0 6px 20px #10203a08}.panel h2{font-size:1.12rem;margin:0 0 5px;color:var(--navy)}label{display:block;font-size:.9rem;margin:12px 0 5px}input,textarea,select{width:100%;border:1px solid #d8deea;border-radius:10px;padding:11px;font:inherit;background:white}textarea{min-height:78px;resize:vertical}.btn{border:0;border-radius:10px;padding:10px 16px;background:var(--red);color:#fff;font:inherit;font-weight:bold;cursor:pointer;margin-top:12px}.btn.secondary{background:#e9eef6;color:var(--navy)}.btn.danger{background:#fff0f0;color:#b42318}.row{display:flex;gap:8px;flex-wrap:wrap;align-items:center}.ad{border:1px solid var(--line);padding:12px;border-radius:12px;margin-top:10px;display:flex;justify-content:space-between;gap:12px;align-items:center}.ad small{display:block;color:var(--muted)}.tag{font-size:.78rem;background:#e9f8ef;color:#187342;border-radius:20px;padding:3px 9px}.tag.off{background:#f0f1f4;color:#687386}.status{margin-top:10px;color:#187342;font-size:.9rem}.wide{grid-column:1/-1}.drop{background:#f8faff;border:1px dashed #b9c5d8;padding:16px;border-radius:12px;margin-top:12px}.foot{color:var(--muted);font-size:.8rem;margin-top:18px}
-@media(max-width:720px){.grid{grid-template-columns:1fr}.wide{grid-column:auto}.top a{float:none;display:block;margin-top:5px}}
+:root{--navy:#101d35;--blue:#1b3a65;--red:#df4b4b;--bg:#f4f6fa;--ink:#172235;--muted:#687386;--line:#e5eaf1}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font-family:Tahoma,Arial,sans-serif;line-height:1.8}.top{background:var(--navy);color:#fff;padding:18px 4%;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}.top a{color:#ffd0d0}.layout{width:min(1100px,94%);margin:26px auto}.notice{background:#fff5db;border:1px solid #f0d58d;color:#76520b;padding:13px 16px;border-radius:12px;margin-bottom:18px;font-size:.88rem}.head{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}.head h1{margin:0;color:var(--navy)}.muted{color:var(--muted);font-size:.88rem}.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:18px 0}.stat,.panel{background:#fff;border:1px solid var(--line);border-radius:16px;padding:20px;box-shadow:0 6px 20px #10203a08}.stat b{display:block;font-size:1.7rem;color:var(--navy)}.tabs{display:flex;gap:8px;flex-wrap:wrap;margin:18px 0}.tab{border:1px solid var(--line);background:#fff;color:var(--navy);padding:9px 15px;border-radius:10px;font:inherit;cursor:pointer}.tab.active{background:var(--navy);color:#fff}.panel h2{font-size:1.12rem;margin:0 0 5px;color:var(--navy)}.grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}.hidden{display:none!important}label{display:block;font-size:.9rem;margin:12px 0 5px}input,textarea{width:100%;border:1px solid #d8deea;border-radius:10px;padding:11px;font:inherit;background:white}textarea{min-height:84px;resize:vertical}.btn{border:0;border-radius:10px;padding:10px 15px;background:var(--red);color:#fff;font:inherit;font-weight:bold;cursor:pointer;margin-top:12px}.btn.secondary{background:#e9eef6;color:var(--navy)}.btn.danger{background:#fff0f0;color:#b42318}.row{display:flex;gap:8px;flex-wrap:wrap;align-items:center}.ad{border:1px solid var(--line);padding:12px;border-radius:12px;margin-top:10px;display:flex;justify-content:space-between;gap:12px;align-items:center}.ad img{width:76px;height:65px;object-fit:cover;border-radius:8px}.ad small{display:block;color:var(--muted)}.tag{font-size:.78rem;background:#e9f8ef;color:#187342;border-radius:20px;padding:3px 9px}.tag.off{background:#f0f1f4;color:#687386}.status{margin-top:10px;color:#187342;font-size:.9rem}.preview{max-width:180px;max-height:120px;object-fit:cover;border-radius:10px;margin-top:10px}.foot{color:var(--muted);font-size:.8rem;margin-top:18px}
+@media(max-width:720px){.grid{grid-template-columns:1fr}.stats{grid-template-columns:1fr}.ad{align-items:flex-start;flex-wrap:wrap}}
 </style></head>
 <body>
 <header class="top"><b>ایران رادیاتور خلیل‌پور | داشبورد مدیریت</b><a href="index.html">بازگشت به سایت ←</a></header>
 <main class="layout">
-<div class="warning"><b>توجه — نسخه آزمایشی:</b> این داشبورد فعلاً نمونه اولیه است و ورود امن دو مدیر یا ذخیره‌سازی مشترک ندارد. اطلاعات تبلیغات فقط در همین مرورگر ذخیره می‌شود. تا زمان راه‌اندازی ورود امن، اطلاعات محرمانه وارد نکنید.</div>
-<div class="head"><div><h1>داشبورد</h1><div class="muted">مدیریت تبلیغات و آماده‌سازی تبادل اطلاعات با هلو</div></div><span class="tag">نسخه آزمایشی</span></div>
+<div class="notice"><b>محدودیت فعلی:</b> این نسخه برای آزمایش امکانات است؛ اطلاعات در حافظه همین مرورگر ذخیره می‌شود و به دستگاه دیگر منتقل نمی‌شود. ورود امن دو مدیر و ذخیره‌سازی مشترک به راه‌اندازی پایگاه داده و احراز هویت سروری نیاز دارد. فعلاً این صفحه را عمومی منتشر نکنید و اطلاعات حساس وارد نکنید.</div>
+<div class="head"><div><h1>داشبورد مدیریت</h1><div class="muted">مدیریت تبلیغات و اطلاعات مجموعه</div></div><span class="tag">نسخه آزمایشی</span></div>
+<div class="stats"><div class="stat"><span class="muted">کل تبلیغات</span><b id="totalAds">۰</b></div><div class="stat"><span class="muted">تبلیغات فعال</span><b id="activeAds">۰</b></div><div class="stat"><span class="muted">تبلیغات غیرفعال</span><b id="inactiveAds">۰</b></div></div>
+<div class="tabs"><button class="tab active" data-tab="adsPanel">مدیریت تبلیغات</button><button class="tab" data-tab="businessPanel">اطلاعات مجموعه</button><button class="tab" data-tab="adminsPanel">مدیران و دسترسی</button></div>
+<section id="adsPanel">
 <div class="grid">
-<section class="panel">
-<h2>افزودن تبلیغ</h2><div class="muted">تبلیغ در فهرست همین داشبورد ثبت می‌شود.</div>
-<label for="adTitle">عنوان تبلیغ</label><input id="adTitle" placeholder="مثلاً تخفیف ویژه محصولات">
-<label for="adDesc">توضیح کوتاه</label><textarea id="adDesc" placeholder="متن تبلیغ..."></textarea>
+<div class="panel">
+<h2 id="formHeading">افزودن تبلیغ جدید</h2><div class="muted">عنوان، توضیح، تصویر و لینک تبلیغ را وارد کنید.</div>
+<label for="adTitle">عنوان تبلیغ</label><input id="adTitle" maxlength="90" placeholder="مثلاً تخفیف ویژه محصولات">
+<label for="adDescription">توضیح تبلیغ</label><textarea id="adDescription" maxlength="350" placeholder="توضیح کوتاه تبلیغ..."></textarea>
 <label for="adUrl">لینک مقصد (اختیاری)</label><input id="adUrl" type="url" placeholder="https://example.com">
-<label for="adImg">آدرس تصویر (اختیاری)</label><input id="adImg" type="url" placeholder="https://...">
-<button class="btn" id="addAd">ثبت تبلیغ</button><div id="adMsg" class="status" aria-live="polite"></div>
-</section>
-<section class="panel">
-<h2>تبلیغات ثبت‌شده</h2><div class="muted">فعال/غیرفعال و حذف تبلیغات در این مرورگر.</div><div id="ads"><p class="muted">هنوز تبلیغی ثبت نشده است.</p></div>
-</section>
-<section class="panel wide">
-<h2>آماده‌سازی اتصال به هلو</h2><p class="muted">فعلاً اتصال مستقیم و خودکار برقرار نیست. این ابزارهای آزمایشی برای تبادل فایل‌های جدولی هستند؛ فایل‌ها در همین مرورگر پردازش می‌شوند.</p>
-<div class="drop"><b>۱. انتخاب فایل خروجی هلو</b><p class="muted">برای شروع، از هلو یک فایل CSV با اطلاعات کالاها خروجی بگیرید. فایل Excel با پسوند XLSX در این نسخه هنوز پردازش نمی‌شود.</p><input id="holooFile" type="file" accept=".csv,text/csv"><div id="fileInfo" class="status" aria-live="polite"></div></div>
-<div class="row"><button class="btn secondary" id="downloadSample">دریافت قالب CSV کالاها</button><button class="btn secondary" id="exportOrders">دریافت قالب CSV سفارش‌ها</button></div>
-<div class="foot">برای همگام‌سازی واقعی موجودی و ثبت فاکتور باید نسخه هلو، روش ارتباط رسمی و مجوز وب‌سرویس آن مشخص شود. فایل CSV به‌تنهایی اتصال زنده ایجاد نمی‌کند.</div>
-</section>
+<label for="adImage">تصویر تبلیغ (اختیاری)</label><input id="adImage" type="file" accept="image/*"><img id="imagePreview" class="preview hidden" alt="پیش‌نمایش تصویر">
+<div class="row"><button class="btn" id="saveAd">ثبت تبلیغ</button><button class="btn secondary hidden" id="cancelEdit">لغو ویرایش</button></div><div id="adMessage" class="status" aria-live="polite"></div>
 </div>
-<p class="foot">این صفحه صرفاً نمونه اولیه مدیریتی است. برای استفاده واقعی باید ورود امن دو کاربر و پایگاه داده مشترک روی سرور راه‌اندازی شود.</p>
+<div class="panel"><h2>فهرست تبلیغات</h2><div class="muted">تبلیغات فعال برای نمایش در صفحه اصلی علامت‌گذاری می‌شوند.</div><div id="adsList"><p class="muted">هنوز تبلیغی ثبت نشده است.</p></div></div>
+</div>
+</section>
+<section id="businessPanel" class="hidden">
+<div class="panel">
+<h2>اطلاعات مجموعه</h2><p class="muted">این اطلاعات در این نسخه آزمایشی در همین مرورگر نگهداری می‌شود.</p>
+<label for="businessPhone">شماره تماس</label><input id="businessPhone" inputmode="tel" placeholder="مثلاً ۰۴۵...">
+<label for="businessWhatsapp">شماره واتساپ با پیش‌شماره کشور</label><input id="businessWhatsapp" inputmode="tel" placeholder="مثلاً 98912...">
+<label for="businessAddress">نشانی</label><textarea id="businessAddress" placeholder="نشانی فروشگاه در اردبیل..."></textarea>
+<label for="businessAbout">معرفی کوتاه مجموعه</label><textarea id="businessAbout" placeholder="درباره مجموعه..."></textarea>
+<button class="btn" id="saveBusiness">ذخیره اطلاعات</button><div id="businessMessage" class="status" aria-live="polite"></div>
+</div>
+</section>
+<section id="adminsPanel" class="hidden">
+<div class="panel">
+<h2>مدیریت دسترسی دو مدیر</h2>
+<p>قرار است دو حساب جداگانه با دسترسی مدیریت داشته باشیم. نام و ایمیل مدیران را می‌توان در مرحله راه‌اندازی ثبت کرد؛ اما ساخت حساب امن، ورود، بازیابی رمز و محدودکردن دسترسی باید در سرور انجام شود.</p>
+<div class="notice">این بخش هنوز فعال نشده است. عمداً رمز مشترک یا رمز ثابت داخل کد سایت قرار نداده‌ایم؛ چنین روشی امن نیست.</div>
+<div class="grid">
+<div><label>مدیر اول</label><input disabled placeholder="پس از راه‌اندازی احراز هویت ثبت می‌شود"></div>
+<div><label>مدیر دوم</label><input disabled placeholder="پس از راه‌اندازی احراز هویت ثبت می‌شود"></div>
+</div>
+</div>
+</section>
+<p class="foot">بخش اتصال هلو فعلاً در این نسخه قرار نگرفته است و بعداً جداگانه بررسی می‌شود.</p>
 </main>
 <script>
-const KEY='ikp_demo_ads_v1';let ads=[];try{ads=JSON.parse(localStorage.getItem(KEY)||'[]')}catch(e){ads=[]}
-const $=id=>document.getElementById(id);
-function save(){localStorage.setItem(KEY,JSON.stringify(ads));render()}
-function render(){const root=$('ads');if(!ads.length){root.innerHTML='<p class="muted">هنوز تبلیغی ثبت نشده است.</p>';return}root.innerHTML='';ads.forEach((a,i)=>{const el=document.createElement('div');el.className='ad';const info=document.createElement('div');const title=document.createElement('b');title.textContent=a.title;const desc=document.createElement('small');desc.textContent=a.desc||'بدون توضیح';const state=document.createElement('span');state.className='tag'+(a.active?'':' off');state.textContent=a.active?'فعال':'غیرفعال';info.append(title,desc,state);const controls=document.createElement('div');controls.className='row';const toggle=document.createElement('button');toggle.className='btn secondary';toggle.textContent=a.active?'غیرفعال‌کردن':'فعال‌کردن';toggle.onclick=()=>{ads[i].active=!ads[i].active;save()};const del=document.createElement('button');del.className='btn danger';del.textContent='حذف';del.onclick=()=>{ads.splice(i,1);save()};controls.append(toggle,del);el.append(info,controls);root.append(el)})}
-$('addAd').onclick=()=>{const title=$('adTitle').value.trim();if(!title){$('adMsg').textContent='لطفاً عنوان تبلیغ را وارد کنید.';return}ads.push({title,desc:$('adDesc').value.trim(),url:$('adUrl').value.trim(),img:$('adImg').value.trim(),active:true});save();$('adTitle').value='';$('adDesc').value='';$('adUrl').value='';$('adImg').value='';$('adMsg').textContent='تبلیغ در همین مرورگر ثبت شد.'};
-function csvDownload(name,rows){const csv='\uFEFF'+rows.map(r=>r.map(v=>'"'+String(v).replace(/"/g,'""')+'"').join(',')).join('\r\n');const blob=new Blob([csv],{type:'text/csv;charset=utf-8'});const url=URL.createObjectURL(blob);const a=document.createElement('a');a.href=url;a.download=name;a.click();URL.revokeObjectURL(url)}
-$('downloadSample').onclick=()=>csvDownload('holoo-products-template.csv',[['کد کالا','نام کالا','قیمت فروش','موجودی'],['','',0,0]]);
-$('exportOrders').onclick=()=>csvDownload('website-orders-template.csv',[['شماره سفارش','نام مشتری','تلفن','کد کالا','تعداد','مبلغ کل','تاریخ'],['','','','','','','']]);
-$('holooFile').onchange=e=>{const f=e.target.files[0];$('fileInfo').textContent=f?'فایل انتخاب شد: '+f.name+' — هنوز به هلو متصل نشده؛ برای بررسی ساختار فایل باید آن را در مرحله بعد پردازش کنیم.':''};
+const ADS_KEY='ikp_demo_ads_v2',BUS_KEY='ikp_demo_business_v1';
+const $=id=>document.getElementById(id);let ads=[];let editing=-1;let imageData='';
+try{ads=JSON.parse(localStorage.getItem(ADS_KEY)||'[]')}catch(e){ads=[]}
+function persist(){localStorage.setItem(ADS_KEY,JSON.stringify(ads));render()}
+function render(){const list=$('adsList');list.innerHTML='';if(!ads.length){list.innerHTML='<p class="muted">هنوز تبلیغی ثبت نشده است.</p>'}
+ads.forEach((a,i)=>{const item=document.createElement('div');item.className='ad';if(a.image){const img=document.createElement('img');img.src=a.image;img.alt='تصویر تبلیغ';item.append(img)}
+const info=document.createElement('div');info.style.flex='1';const title=document.createElement('b');title.textContent=a.title;const desc=document.createElement('small');desc.textContent=a.description||'بدون توضیح';const status=document.createElement('span');status.className='tag'+(a.active?'':' off');status.textContent=a.active?'فعال':'غیرفعال';info.append(title,desc,status);
+const controls=document.createElement('div');controls.className='row';const edit=document.createElement('button');edit.className='btn secondary';edit.textContent='ویرایش';edit.onclick=()=>startEdit(i);const toggle=document.createElement('button');toggle.className='btn secondary';toggle.textContent=a.active?'غیرفعال‌کردن':'فعال‌کردن';toggle.onclick=()=>{ads[i].active=!ads[i].active;persist()};const del=document.createElement('button');del.className='btn danger';del.textContent='حذف';del.onclick=()=>{if(confirm('این تبلیغ حذف شود؟')){ads.splice(i,1);persist();if(editing===i)resetForm()}};controls.append(edit,toggle,del);item.append(info,controls);list.append(item)});
+$('totalAds').textContent=ads.length.toLocaleString('fa-IR');$('activeAds').textContent=ads.filter(x=>x.active).length.toLocaleString('fa-IR');$('inactiveAds').textContent=ads.filter(x=>!x.active).length.toLocaleString('fa-IR')}
+function resetForm(){editing=-1;imageData='';$('formHeading').textContent='افزودن تبلیغ جدید';$('saveAd').textContent='ثبت تبلیغ';$('cancelEdit').classList.add('hidden');$('adTitle').value='';$('adDescription').value='';$('adUrl').value='';$('adImage').value='';$('imagePreview').src='';$('imagePreview').classList.add('hidden')}
+function startEdit(i){const a=ads[i];editing=i;imageData=a.image||'';$('formHeading').textContent='ویرایش تبلیغ';$('saveAd').textContent='ذخیره تغییرات';$('cancelEdit').classList.remove('hidden');$('adTitle').value=a.title;$('adDescription').value=a.description||'';$('adUrl').value=a.url||'';if(imageData){$('imagePreview').src=imageData;$('imagePreview').classList.remove('hidden')}else $('imagePreview').classList.add('hidden');window.scrollTo({top:0,behavior:'smooth'})}
+$('adImage').onchange=e=>{const f=e.target.files[0];if(!f)return;if(!f.type.startsWith('image/')){alert('لطفاً فایل تصویر انتخاب کنید.');return}if(f.size>1200000){alert('حجم تصویر باید کمتر از ۱٫۲ مگابایت باشد.');e.target.value='';return}const reader=new FileReader();reader.onload=()=>{imageData=reader.result;$('imagePreview').src=imageData;$('imagePreview').classList.remove('hidden')};reader.readAsDataURL(f)};
+$('saveAd').onclick=()=>{const title=$('adTitle').value.trim();if(!title){$('adMessage').textContent='عنوان تبلیغ را وارد کنید.';return}const url=$('adUrl').value.trim();if(url&&!/^https?:\/\//i.test(url)){$('adMessage').textContent='لینک باید با http:// یا https:// شروع شود.';return}const old=editing>=0?ads[editing]:null;const entry={title,description:$('adDescription').value.trim(),url,image:imageData||(old&&old.image)||'',active:old?old.active:true};if(editing>=0)ads[editing]=entry;else ads.unshift(entry);persist();resetForm();$('adMessage').textContent='تغییرات در همین مرورگر ذخیره شد.'};
+$('cancelEdit').onclick=resetForm;
+$('saveBusiness').onclick=()=>{const data={phone:$('businessPhone').value.trim(),whatsapp:$('businessWhatsapp').value.trim(),address:$('businessAddress').value.trim(),about:$('businessAbout').value.trim()};localStorage.setItem(BUS_KEY,JSON.stringify(data));$('businessMessage').textContent='اطلاعات در همین مرورگر ذخیره شد.'};
+try{const d=JSON.parse(localStorage.getItem(BUS_KEY)||'{}');$('businessPhone').value=d.phone||'';$('businessWhatsapp').value=d.whatsapp||'';$('businessAddress').value=d.address||'';$('businessAbout').value=d.about||''}catch(e){}
+document.querySelectorAll('.tab').forEach(btn=>btn.onclick=()=>{document.querySelectorAll('.tab').forEach(x=>x.classList.toggle('active',x===btn));['adsPanel','businessPanel','adminsPanel'].forEach(id=>$(id).classList.toggle('hidden',id!==btn.dataset.tab))});
 render();
 </script></body></html>
