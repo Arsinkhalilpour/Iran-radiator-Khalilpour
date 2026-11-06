@@ -92,6 +92,16 @@ try{
   card.append(body);root.append(card);
  })}
 }catch(e){}
+try{
+ const b=JSON.parse(localStorage.getItem('ikp_demo_business_v1')||'{}');
+ const contact=document.querySelector('#contact .contact-box');
+ if(contact){
+  const p=contact.querySelectorAll('p');
+  if(b.address&&p[0])p[0].textContent='اردبیل · '+b.address;
+  if((b.phone||b.whatsapp)&&p[1]){p[1].textContent='شماره تماس: '+(b.phone||'ثبت نشده')+(b.whatsapp?' | واتساپ: '+b.whatsapp:'');}
+  if(b.about){const about=document.querySelector('#about .wrap > p');if(about)about.textContent=b.about;}
+ }
+}catch(e){}
 </script>
 </body>
 </html>
