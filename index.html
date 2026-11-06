@@ -27,7 +27,8 @@
     .contact-box{background:linear-gradient(120deg,#18345c,#101d35);color:#fff;border-radius:22px;padding:35px;display:flex;justify-content:space-between;align-items:center;gap:20px}.contact-box p{color:#dce5f2;margin-bottom:0}
     footer{background:#0b1426;color:#cbd5e1;padding:24px 0;text-align:center;font-size:.88rem}footer strong{color:#fff}
     .note{font-size:.82rem;color:#9aa6b8;margin-top:18px}
-    @media(max-width:760px){.nav{padding:12px 0;align-items:flex-start;flex-direction:column}.hero{padding:55px 0}.hero-grid,.about-grid{grid-template-columns:1fr}.hero-art{min-height:170px}.heater{height:145px;width:220px}.cards{grid-template-columns:1fr}.contact-box{align-items:flex-start;flex-direction:column}section{padding:48px 0}nav{gap:14px}}
+    .ad-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.ad-card{background:#fff;border:1px solid #e8edf4;border-radius:18px;overflow:hidden;box-shadow:0 8px 25px #15294a0a}.ad-card img{width:100%;height:180px;object-fit:cover;display:block}.ad-card .ad-body{padding:18px}.ad-card h3{margin:0 0 7px;color:var(--navy)}.ad-card p{margin:0;color:var(--muted);font-size:.94rem}.ad-empty{text-align:center;color:var(--muted);padding:22px;background:#fff;border-radius:16px}
+    @media(max-width:760px){.nav{padding:12px 0;align-items:flex-start;flex-direction:column}.hero{padding:55px 0}.hero-grid,.about-grid{grid-template-columns:1fr}.hero-art{min-height:170px}.heater{height:145px;width:220px}.cards,.ad-grid{grid-template-columns:1fr}.contact-box{align-items:flex-start;flex-direction:column}section{padding:48px 0}nav{gap:14px}}
   </style>
 </head>
 <body>
@@ -35,7 +36,7 @@
   <div class="wrap nav">
     <a class="brand" href="#home">ایران رادیاتور <span>خلیل‌پور</span></a>
     <nav aria-label="ناوبری اصلی">
-      <a href="#home">خانه</a><a href="#services">محصولات و خدمات</a><a href="#about">درباره ما</a><a href="#contact">ارتباط با ما</a>
+      <a href="#home">خانه</a><a href="#services">محصولات و خدمات</a><a href="#ads">تبلیغات</a><a href="#about">درباره ما</a><a href="#contact">ارتباط با ما</a>
     </nav>
   </div>
 </header>
@@ -61,6 +62,7 @@
       </div>
     </div>
   </section>
+  <section id="ads"><div class="wrap"><div class="section-head"><h2>پیشنهادها و تبلیغات</h2><p>تخفیف‌ها و اطلاعیه‌های مجموعه</p></div><div id="publicAds" class="ad-grid"><div class="ad-empty">در حال حاضر تبلیغی ثبت نشده است.</div></div></div></section>
   <section class="about" id="about">
     <div class="wrap about-grid">
       <div><div class="section-head" style="text-align:right"><h2>درباره ایران رادیاتور خلیل‌پور</h2><p>همراه شما در اردبیل</p></div><p>این وب‌سایت برای معرفی مجموعه ایران رادیاتور خلیل‌پور طراحی شده است. اطلاعات دقیق‌تر درباره سابقه، نشانی، محصولات و خدمات مجموعه به‌زودی در همین صفحه قرار می‌گیرد.</p></div>
@@ -75,6 +77,21 @@
   </section>
 </main>
 <footer><div class="wrap">© <span id="year"></span> <strong>ایران رادیاتور خلیل‌پور</strong> · طراحی‌شده برای معرفی مجموعه</div></footer>
-<script>document.getElementById('year').textContent=new Date().getFullYear();</script>
+<script>
+document.getElementById('year').textContent=new Date().getFullYear();
+try{
+ const ads=JSON.parse(localStorage.getItem('ikp_demo_ads_v2')||'[]').filter(x=>x.active);
+ const root=document.getElementById('publicAds');
+ if(ads.length){root.innerHTML='';ads.forEach(ad=>{
+  const card=document.createElement('article');card.className='ad-card';
+  if(ad.image){const img=document.createElement('img');img.src=ad.image;img.alt=ad.title||'تصویر تبلیغ';img.loading='lazy';card.append(img)}
+  const body=document.createElement('div');body.className='ad-body';
+  const h=document.createElement('h3');h.textContent=ad.title;
+  const p=document.createElement('p');p.textContent=ad.description||'';body.append(h,p);
+  if(ad.url){const link=document.createElement('a');link.className='btn btn-red';link.href=ad.url;link.target='_blank';link.rel='noopener noreferrer';link.textContent='مشاهده';body.append(link)}
+  card.append(body);root.append(card);
+ })}
+}catch(e){}
+</script>
 </body>
 </html>
